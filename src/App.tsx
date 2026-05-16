@@ -13,15 +13,15 @@ const PLAYLIST = [
     url: "https://www.dropbox.com/scl/fi/oueetus8tmdq99ho2ye5w/Alex-Warren-Ordinary-Official-Video.mp3?rlkey=pd8c6x1a41n9y04qph8ny47k9&st=xhnktyom&raw=1"
   },
   {
-    title: "Morenikeji",
+    title: "Morenikeji - Konstant",
     url: "https://www.dropbox.com/scl/fi/w5gmn0mrrst5xao0fm79n/MORENIKEJI.mp3?rlkey=0ckaxetg3w1oi9yehz709e3r8&st=svieaw1t&raw=1"
   },
   {
-    title: "Eternity",
+    title: "Eternity - Alex Warren",
     url: "https://www.dropbox.com/scl/fi/rimo8qkkgslmugboq0eil/Eternity.mp3?rlkey=bxkr16a3uwu67q02vnsbp00cg&st=h0i5p3fs&raw=1"
   },
   {
-    title: "Baby Jowo",
+    title: "Baby Jowo - RMD",
     url: "https://www.dropbox.com/scl/fi/zt9l3jfencznio0rkg73j/Baby-Jowo.mp3?rlkey=jfm3s9pudzto8sy1wnkensjop&st=1f1qoty6&raw=1"
   },
   {
@@ -420,7 +420,7 @@ export default function App() {
               <div className="credit-name">Mololuwa ❤️</div>
               
               <div className="credit-role">Starring</div>
-              <div className="credit-name">Moh & Temidayo</div>
+              <div className="credit-name">Moh & Temi</div>
               
               <div className="credit-role">Directed by</div>
               <div className="credit-name">Temidayo</div>
@@ -446,16 +446,18 @@ export default function App() {
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            className="absolute inset-0 z-[2000] flex flex-col items-center justify-center bg-black"
+            className="absolute inset-0 z-[2000] flex flex-col items-center justify-center bg-black px-6 text-center"
           >
              <motion.div
               animate={{ rotate: 360 }}
               transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
               className="text-red-900/20 mb-8"
             >
-              <Heart size={120} fill="currentColor" />
+              <Heart size={80} fill="currentColor" />
             </motion.div>
-            <h2 className="font-serif text-2xl mb-8 text-[var(--rose-gold)] uppercase tracking-[0.3em]">To many more years...</h2>
+            <h2 className="font-serif text-xl md:text-2xl mb-8 text-[var(--rose-gold)] uppercase tracking-[0.3em] leading-relaxed">
+              To many more years...
+            </h2>
             <button
               onClick={resetExperience}
               className="px-8 py-2 border border-[var(--rose-gold)] rounded-full text-[var(--rose-gold)] text-xs uppercase tracking-[0.2em] hover:bg-[var(--rose-gold)]/10 transition-all"
