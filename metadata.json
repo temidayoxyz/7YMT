@@ -1,6 +1,6 @@
 {
-  "name": "To Moh: Our 7-Year Journey",
-  "description": "A cinematic anniversary experience for Moh, celebrating 7 years of love and growth.",
+  "name": "Our Story: A Tribute to Moh",
+  "description": "A cinematic anniversary experience for Moh, celebrating 7 years of love, growth, and drifting back together since 2019.",
   "requestFramePermissions": [],
   "majorCapabilities": [
     "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
