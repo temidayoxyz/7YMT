@@ -23,17 +23,14 @@ The app is designed as a digital tribute that guides the viewer through a series
 ## 🎵 Playlist Credits
 
 - *Ordinary* — Alex Warren
-- *Morenikeji*
-- *Eternity*
-- *Baby Jowo*
+- *Morenikeji* — Konstant
+- *Eternity* — Alex Warren
+- *Baby Jowo* — RMD
 - *SuperFuji GOBE* — oSHAMO
 
 ## 👥 Credits
 
-- **Dedicated to**: Mololuwa ❤️
 - **Directed by**: Temidayo
-- **Starring**: Moh & Temidayo
-- **Assistant Director**: Destiny
 
 ---
 
