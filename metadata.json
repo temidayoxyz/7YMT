@@ -1,0 +1,8 @@
+{
+  "name": "To Moh: Our 7-Year Journey",
+  "description": "A cinematic anniversary experience for Moh, celebrating 7 years of love and growth.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

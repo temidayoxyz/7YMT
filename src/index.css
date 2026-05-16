@@ -1,0 +1,270 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", serif;
+  --font-cursive: "Great Vibes", cursive;
+}
+
+:root {
+  --deep-red: #4a0404;
+  --velvet: #2c0101;
+  --rose-gold: #e5b3a6;
+  --warm-white: #fdf5e6;
+  --gold-glow: rgba(229, 179, 166, 0.3);
+  --dark-color: #000;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--dark-color);
+  color: var(--warm-white);
+  overflow: hidden;
+  font-family: 'Georgia', serif;
+}
+
+/* Curtain Styles */
+.curtain-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  z-index: 1000;
+  pointer-events: none;
+}
+
+.curtain-part {
+  flex: 1;
+  height: 100%;
+  background: linear-gradient(90deg, #1a0101 0%, #3d0202 20%, #1a0101 40%, #3d0202 60%, #1a0101 80%, #3d0202 100%);
+  position: relative;
+  box-shadow: 0 0 50px rgba(0,0,0,0.8);
+}
+
+.curtain-part::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 1px;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.curtain-left::after { right: 0; }
+.curtain-right::after { left: 0; }
+
+.curtain-fold {
+  position: absolute;
+  top: 0;
+  width: 120px;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(0,0,0,0.3) 0%, transparent 50%, rgba(0,0,0,0.3) 100%);
+}
+
+/* Flower Animation Base */
+.night {
+  position: fixed;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at center, var(--deep-red) 0%, #000 80%);
+  z-index: -1;
+}
+
+.flowers {
+  position: relative;
+  transform: scale(0.9);
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  height: 100vh;
+  width: 100%;
+}
+
+.flower {
+  position: absolute;
+  bottom: 5vmin;
+  transform-origin: bottom center;
+  z-index: 10;
+  --fl-speed: 0.8s;
+  opacity: 0.6;
+}
+
+.flower__line {
+  height: 55vmin;
+  width: 1.5vmin;
+  background-image: linear-gradient(to left, rgba(0, 0, 0, 0.2), transparent, rgba(255, 255, 255, 0.2)),
+    linear-gradient(to top, transparent 10%, #4a0404, #8b0000);
+  box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.5);
+  animation: grow-flower-tree 4s backwards;
+}
+
+.flower__leafs {
+  position: relative;
+  animation: blooming-flower 2s backwards;
+}
+
+.flower__leaf {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 8vmin;
+  height: 11vmin;
+  border-radius: 51% 49% 47% 53% / 44% 45% 55% 69%;
+  background-color: #ff4d4d;
+  background-image: linear-gradient(to top, #8b0000, #ff4d4d);
+  transform-origin: bottom center;
+  opacity: 0.9;
+  box-shadow: inset 0 0 2vmin rgba(255, 255, 255, 0.3);
+}
+
+.flower__leaf--1 { transform: translate(-10%, 1%) rotateY(40deg) rotateX(-50deg); }
+.flower__leaf--2 { transform: translate(-50%, -4%) rotateX(40deg); }
+.flower__leaf--3 { transform: translate(-90%, 0%) rotateY(45deg) rotateX(50deg); }
+.flower__leaf--4 {
+  width: 8vmin; height: 8vmin; transform-origin: bottom left;
+  border-radius: 4vmin 10vmin 4vmin 4vmin;
+  transform: translate(-0%, 18) rotateX(70deg) rotate(-43deg);
+  background-image: linear-gradient(to top, #6b0000, #ff4d4d);
+  z-index: 1; opacity: 0.8;
+}
+
+.flower__white-circle::after {
+  content: "";
+  position: absolute;
+  left: 50%; top: 45%;
+  transform: translate(-50%, -50%);
+  width: 60%; height: 60%;
+  border-radius: inherit;
+  background-image: repeating-linear-gradient(135deg, rgba(0,0,0,0.03) 0px, rgba(0,0,0,0.03) 1px, transparent 1px, transparent 12px),
+    linear-gradient(90deg, #ffcc00, #ffaa00);
+}
+
+/* Glow effects */
+.flower__leafs::after {
+  content: "";
+  position: absolute;
+  left: 0; top: 0;
+  transform: translate(-50%, -100%);
+  width: 8vmin; height: 8vmin;
+  background-color: #ff3333;
+  filter: blur(10vmin);
+}
+
+.cinematic-text {
+  color: var(--rose-gold);
+  text-shadow: 0 0 20px var(--gold-glow);
+  letter-spacing: -2px;
+}
+
+/* Floating particles */
+.particle {
+  position: absolute;
+  background: var(--rose-gold);
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: 0.4;
+}
+
+@keyframes float-particle {
+  0% { transform: translateY(0) rotate(0); opacity: 0; }
+  50% { opacity: 0.5; }
+  100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
+}
+
+@keyframes grow-flower-tree {
+  0% { height: 0; border-radius: 1vmin; }
+}
+
+@keyframes blooming-flower {
+  0% { transform: scale(0); }
+}
+
+@keyframes light-ans {
+  0% { opacity: 0; transform: translateY(0vmin); }
+  25% { opacity: 1; transform: translateY(-5vmin) translateX(-2vmin); }
+  50% { opacity: 1; transform: translateY(-15vmin) translateX(2vmin); filter: blur(0.2vmin); }
+  75% { transform: translateY(-20vmin) translateX(-2vmin); filter: blur(0.2vmin); }
+  100% { transform: translateY(-30vmin); opacity: 0; filter: blur(1vmin); }
+}
+
+.flower__light {
+  position: absolute;
+  bottom: 10vmin;
+  width: 1vmin;
+  height: 1vmin;
+  background-color: rgb(255, 251, 0);
+  border-radius: 50%;
+  filter: blur(0.2vmin);
+  animation: light-ans 4s linear infinite backwards;
+}
+
+/* Floating Roses */
+.rose-petal {
+  position: absolute;
+  pointer-events: none;
+  z-index: 50;
+  opacity: 0.6;
+}
+
+/* Cinematic Transitions */
+.cinematic-text {
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+}
+
+/* Music Control */
+.music-control {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1100;
+}
+
+/* Credits Styling */
+.credits-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  text-align: center;
+  width: 100%;
+}
+
+.credit-role {
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  color: rgba(253, 245, 230, 0.5);
+  margin-bottom: 0.25rem;
+}
+
+.credit-name {
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  color: var(--rose-gold);
+  margin-bottom: 2rem;
+}
+
+/* Additional specific flower animations from inspiration */
+.flower--1 { animation: moving-flower-1 4s linear infinite; }
+.flower--2 { left: 5vmin; transform: rotate(20deg); animation: moving-flower-2 4s linear infinite; }
+.flower--3 { left: -5vmin; transform: rotate(-15deg); animation: moving-flower-3 4s linear infinite; }
+
+@keyframes moving-flower-1 { 0%, 100% { transform: rotate(2deg); } 50% { transform: rotate(-2deg); } }
+@keyframes moving-flower-2 { 0%, 100% { transform: rotate(22deg); } 50% { transform: rotate(18deg); } }
+@keyframes moving-flower-3 { 0%, 100% { transform: rotate(-13deg); } 50% { transform: rotate(-17deg); } }
+
+.grass {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 10vmin;
+  background: linear-gradient(to top, #001a1a, transparent);
+  z-index: 5;
+}
