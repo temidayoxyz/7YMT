@@ -1,20 +1,40 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# Our Story: A Cinematic Anniversary Tribute
 
-# Run and deploy your AI Studio app
+A personalized, cinematic web application dedicated to **Mololuwa (Moh)** from **Temidayo**. This project celebrates a 7-year journey of love, resilience, and growth since 2019.
 
-This contains everything you need to run your app locally.
+## 🎬 Experience
 
-View your app in AI Studio: https://ai.studio/apps/1b55c9c2-79b6-48cc-8582-8152c8b183db
+The app is designed as a digital tribute that guides the viewer through a series of heartfelt messages and cinematic visuals. 
 
-## Run Locally
+### Key Features
+- **Curated Playlist**: Before the journey begins, the user can preview and select their preferred background music from a list of hand-picked tracks.
+- **Cinematic Storytelling**: Uses smooth transitions and animations (powered by `motion`) to tell a story through time—months, weeks, and days of shared history.
+- **Resilient Love Narrative**: Reflects the real journey of "drifting and returning," celebrating the untameable bond between Moh and Temi.
+- **Starring Credits**: A cinematic end-sequence dedicated to those who make the story possible.
+- **Subtle Controls**: Integrated playback controls (Play, Pause, Skip, Mute) that stay out of the way of the visuals.
 
-**Prerequisites:**  Node.js
+## 🛠️ Built With
 
+- **React 19**: Modern functional components.
+- **Framer Motion**: Smooth, cinematic layout animations and text transitions.
+- **Tailwind CSS**: Elegant, dark-themed UI with "rose gold" accents.
+- **Lucide React**: Clean, minimalist iconography.
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+## 🎵 Playlist Credits
+
+- *Ordinary* — Alex Warren
+- *Morenikeji*
+- *Eternity*
+- *Baby Jowo*
+- *SuperFuji GOBE* — oSHAMO
+
+## 👥 Credits
+
+- **Dedicated to**: Mololuwa ❤️
+- **Directed by**: Temidayo
+- **Starring**: Moh & Temidayo
+- **Assistant Director**: Destiny
+
+---
+
+*“Between the storms and the silences, my heart never moved.”*
