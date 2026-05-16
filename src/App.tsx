@@ -455,7 +455,7 @@ export default function App() {
             >
               <Heart size={80} fill="currentColor" />
             </motion.div>
-            <h2 className="font-serif text-xl md:text-2xl mb-8 text-[var(--rose-gold)] uppercase tracking-[0.3em] leading-relaxed">
+            <h2 className="font-serif text-xl md:text-2xl mb-8 text-[var(--rose-gold)] uppercase tracking-[0.15em] md:tracking-[0.3em] leading-relaxed">
               To many more years...
             </h2>
             <button
