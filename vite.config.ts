@@ -8,9 +8,6 @@ export default defineConfig(({mode}) => {
   return {
     base: '/7YMT/',
     plugins: [react(), tailwindcss()],
-    build: {
-      outDir: 'docs',
-    },
     define: {
       'process.env.GEMINI_API_KEY': JSON.stringify(env.GEMINI_API_KEY),
     },
